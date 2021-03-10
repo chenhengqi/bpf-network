@@ -6,7 +6,7 @@ build-docker-image:
 	$(SUDO) docker build -t $(DOCKER_IMAGE) .
 
 build-bpf-objects:
-	$(SUDO) docker run --rm \
+	$(SUDO) timeout 10 docker run --rm \
 		-v $(PWD):/src \
 		-w /src \
 		$(DOCKER_IMAGE) \
