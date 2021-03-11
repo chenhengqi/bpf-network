@@ -3,7 +3,7 @@
 
 #define SEC(NAME) __attribute__((section(NAME), used))
 
-SEC("prog")
+SEC("xdp")
 int xdp_drop(struct xdp_md *ctx) {
    char msg[] = "xdp_drop get called\n";
    bpf_trace_printk(msg, sizeof(msg));
